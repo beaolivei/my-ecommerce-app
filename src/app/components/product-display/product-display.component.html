@@ -1,0 +1,12 @@
+<p>
+  Checkout Your Awesome Product List
+</p>
+
+
+
+  <div *ngFor="let user of users" >
+    <a (click)="OnClick()">
+      <h2>{{user.title}} </h2>
+      <img src='{{user.image}}'/>
+    </a>
+  </div>
