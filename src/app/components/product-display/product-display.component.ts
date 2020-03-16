@@ -9,10 +9,15 @@ import { HttpService } from "../../data.service"
 })
 export class ProductDisplayComponent {
   users: any;
+  status: boolean = false;
   constructor(private apiCall: HttpService, private httpClient: HttpClient) {
     this.apiCall.getUsers().subscribe(users => {
       console.log('users', users);
       this.users = users;
     });
+  }
+  OnClick(user){
+    this.status = !this.status;
+    
   }
 }

@@ -7,6 +7,20 @@
   <div *ngFor="let user of users" >
     <a (click)="OnClick()">
       <h2>{{user.title}} </h2>
-      <img src='{{user.image}}'/>
+      <img src={{user.image}}/>
+      <div 
+      [ngClass]="status ? 'show' : 'hide'">
+      <p> {{user.description}} </p>
+      <p> color: {{user.color}} </p>
+      <p> price: {{user.price}} </p>
+      </div>
+      <div class="flexWrap">
+      <button (click)="onClick(user)" >
+      <a> Learn More </a>
+      </button>
+      <button >
+      <a> Add to shopping cart </a>
+      </button>
+      </div>
     </a>
   </div>
